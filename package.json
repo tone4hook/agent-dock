@@ -1,0 +1,35 @@
+{
+  "name": "agent-dock",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "npx --yes @neutralinojs/neu update",
+    "dev": "node scripts/dev-supervisor.mjs",
+    "neutralino:dev": "neu run",
+    "neutralino:build": "neu build",
+    "build:packages": "npm run build -w @agent-dock/shared && npm run build -w @agent-dock/atlassian && npm run build -w @agent-dock/db && npm run build -w @agent-dock/artifacts && npm run build -w @agent-dock/worktrees && npm run build -w @agent-dock/workflows && npm run build -w @agent-dock/agents && npm run build -w @agent-dock/orchestrator",
+    "build": "npm run build:packages && npm run build -w @agent-dock/api && npm run build -w @agent-dock/web && npm run neutralino:build",
+    "typecheck": "npm run build:packages && npm run typecheck -w @agent-dock/api && npm run typecheck -w @agent-dock/web",
+    "db:migrate": "tsx apps/api/src/migrate.ts",
+    "package:mac": "node scripts/build-mac.mjs",
+    "package:mac:signed": "node scripts/build-mac.mjs --sign",
+    "package:dmg": "node scripts/make-dmg.mjs",
+    "package:dmg:signed": "node scripts/make-dmg.mjs --sign",
+    "notarize": "node scripts/notarize-mac.mjs",
+    "release:mac": "npm run package:mac:signed && npm run notarize"
+  },
+  "devDependencies": {
+    "@neutralinojs/neu": "^11.5.0",
+    "@types/node": "^24.3.1",
+    "concurrently": "^9.2.1",
+    "tsx": "^4.20.5",
+    "tree-kill": "^1.2.2",
+    "typescript": "^5.8.3"
+  }
+}

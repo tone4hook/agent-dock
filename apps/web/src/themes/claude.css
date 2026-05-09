@@ -1,0 +1,105 @@
+/* claude theme — light + dark. Single theme; toggled via .dark on <html>. */
+
+:root {
+  --background: hsl(48 33% 97%);
+  --foreground: hsl(48 19% 20%);
+
+  --card: hsl(48 33% 99%);
+  --card-foreground: hsl(48 19% 20%);
+
+  --popover: hsl(48 33% 99%);
+  --popover-foreground: hsl(48 19% 20%);
+
+  --primary: hsl(15 55% 52%);
+  --primary-foreground: hsl(48 33% 99%);
+
+  --secondary: hsl(46 25% 89%);
+  --secondary-foreground: hsl(48 19% 20%);
+
+  --muted: hsl(46 25% 92%);
+  --muted-foreground: hsl(48 10% 42%);
+
+  --accent: hsl(46 25% 89%);
+  --accent-foreground: hsl(48 19% 20%);
+
+  --destructive: hsl(0 65% 50%);
+  --destructive-foreground: hsl(48 33% 99%);
+
+  --warn: hsl(28 75% 50%);
+  --warn-foreground: hsl(48 33% 99%);
+
+  --success: hsl(165 45% 35%);
+  --success-foreground: hsl(48 33% 99%);
+
+  --border: hsl(46 18% 82%);
+  --input: hsl(46 18% 82%);
+  --ring: hsl(15 55% 52%);
+
+  --chart-1: hsl(15 55% 52%);
+  --chart-2: hsl(165 45% 40%);
+  --chart-3: hsl(28 70% 50%);
+  --chart-4: hsl(220 50% 55%);
+  --chart-5: hsl(280 40% 55%);
+
+  --sidebar: hsl(46 25% 92%);
+  --sidebar-foreground: hsl(48 19% 20%);
+  --sidebar-primary: hsl(15 55% 52%);
+  --sidebar-primary-foreground: hsl(48 33% 99%);
+  --sidebar-accent: hsl(46 25% 86%);
+  --sidebar-accent-foreground: hsl(48 19% 20%);
+  --sidebar-border: hsl(46 18% 82%);
+  --sidebar-ring: hsl(15 55% 52%);
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(60 3% 12%);
+  --foreground: hsl(60 7% 94%);
+
+  --card: hsl(60 3% 14%);
+  --card-foreground: hsl(60 7% 94%);
+
+  --popover: hsl(60 3% 14%);
+  --popover-foreground: hsl(60 7% 94%);
+
+  --primary: hsl(15 63% 60%);
+  --primary-foreground: hsl(60 3% 12%);
+
+  --secondary: hsl(60 3% 18%);
+  --secondary-foreground: hsl(60 7% 94%);
+
+  --muted: hsl(60 3% 20%);
+  --muted-foreground: hsl(60 5% 65%);
+
+  --accent: hsl(60 3% 20%);
+  --accent-foreground: hsl(60 7% 94%);
+
+  --destructive: hsl(0 62% 55%);
+  --destructive-foreground: hsl(60 7% 94%);
+
+  --warn: hsl(28 70% 58%);
+  --warn-foreground: hsl(60 3% 12%);
+
+  --success: hsl(165 40% 50%);
+  --success-foreground: hsl(60 3% 12%);
+
+  --border: hsl(60 3% 24%);
+  --input: hsl(60 3% 24%);
+  --ring: hsl(15 63% 60%);
+
+  --chart-1: hsl(15 63% 60%);
+  --chart-2: hsl(165 40% 50%);
+  --chart-3: hsl(28 70% 58%);
+  --chart-4: hsl(220 55% 65%);
+  --chart-5: hsl(280 45% 65%);
+
+  --sidebar: hsl(60 3% 14%);
+  --sidebar-foreground: hsl(60 7% 94%);
+  --sidebar-primary: hsl(15 63% 60%);
+  --sidebar-primary-foreground: hsl(60 3% 12%);
+  --sidebar-accent: hsl(60 3% 20%);
+  --sidebar-accent-foreground: hsl(60 7% 94%);
+  --sidebar-border: hsl(60 3% 24%);
+  --sidebar-ring: hsl(15 63% 60%);
+}

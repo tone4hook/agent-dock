@@ -1,0 +1,62 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+build
+resources/assets
+
+# Neutralino vendored artifacts (fetched by `npx @neutralinojs/neu update`)
+bin
+resources/neutralino.js
+resources/neutralino.d.ts
+
+# Project-local
+.agent-dock
+.tmp
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+.npmrc
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Agent / tooling artifacts
+.claude
+.specs
+.plan
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editor / IDE
+.idea
+.vscode
+.cursor
+.zed
+*.swp
+*.swo
+*~
+.project
+.settings
+
+# Build / test caches
+*.tsbuildinfo
+coverage
+.cache
+.parcel-cache

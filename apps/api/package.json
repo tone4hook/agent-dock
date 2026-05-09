@@ -1,0 +1,35 @@
+{
+  "name": "@agent-dock/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@agent-dock/agents": "file:../../packages/agents",
+    "@agent-dock/artifacts": "file:../../packages/artifacts",
+    "@agent-dock/atlassian": "file:../../packages/atlassian",
+    "@agent-dock/db": "file:../../packages/db",
+    "@agent-dock/orchestrator": "file:../../packages/orchestrator",
+    "@agent-dock/shared": "file:../../packages/shared",
+    "@agent-dock/workflows": "file:../../packages/workflows",
+    "@agent-dock/worktrees": "file:../../packages/worktrees",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.21",
+    "@types/supertest": "^7.2.0",
+    "supertest": "^7.2.2",
+    "typescript": "^5.8.3",
+    "vitest": "^2.1.0"
+  }
+}

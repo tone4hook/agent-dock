@@ -1,0 +1,70 @@
+{
+  "applicationId": "dev.Agent*Dock.starter",
+  "version": "0.1.0",
+  "defaultMode": "window",
+  "port": 0,
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "nativeAllowList": [
+    "app.*",
+    "os.showFolderDialog",
+    "os.showOpenDialog",
+    "os.showSaveDialog",
+    "os.showNotification",
+    "os.showMessageBox",
+    "os.execCommand",
+    "os.spawnProcess",
+    "os.updateSpawnedProcess",
+    "os.getSpawnedProcesses",
+    "os.getEnv",
+    "os.getEnvs",
+    "os.getPath",
+    "os.open",
+    "os.setTray",
+    "window.*",
+    "filesystem.*",
+    "computer.*",
+    "storage.*",
+    "events.*",
+    "extensions.*",
+    "debug.*",
+    "clipboard.*",
+    "custom.*"
+  ],
+  "singlePageServe": true,
+  "documentRoot": "/resources/",
+  "url": "/",
+  "applicationIcon": "resources/icon.png",
+  "logging": {
+    "enabled": true,
+    "writeToLogFile": false
+  },
+  "modes": {
+    "window": {
+      "title": "Agent*Dock",
+      "width": 1180,
+      "height": 780,
+      "minWidth": 900,
+      "minHeight": 620,
+      "resizable": true,
+      "exitProcessOnClose": true,
+      "enableInspector": true
+    }
+  },
+  "cli": {
+    "binaryName": "agent-dock",
+    "resourcesPath": "/resources/",
+    "clientLibrary": "/resources/neutralino.js",
+    "frontendLibrary": {
+      "patchFile": "/resources/index.html",
+      "devUrl": "http://127.0.0.1:5173"
+    },
+    "hostProject": {
+      "projectPath": "/apps/web",
+      "buildCommand": "npm run build -w @agent-dock/web",
+      "buildPath": "/apps/web/dist"
+    },
+    "binaryVersion": "6.7.0",
+    "clientVersion": "6.7.0"
+  }
+}
