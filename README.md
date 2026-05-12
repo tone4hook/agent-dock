@@ -6,7 +6,7 @@ Built on React + shadcn/ui, an Express + SQLite API, and a Neutralino window. Si
 
 ## Quick start (development)
 
-Requires **macOS 11+**, **Node 20+**, and a Claude Code (or Gemini / Codex) CLI on your PATH.
+Requires **macOS 11+**, **Node 24+**, and a Claude Code (or Gemini / Codex) CLI on your PATH. The Node 24 floor is driven by `better-sqlite3`'s native bindings — older Node majors hit an ABI mismatch at first DB open.
 
 ```bash
 # clone, then:
@@ -33,7 +33,7 @@ The app is signed with a Developer ID Application certificate and notarized by A
 
 **On the receiving Mac you'll also need:**
 
-- **Node 20+** on PATH. The launcher auto-discovers Homebrew, nvm, volta, fnm, and asdf installs; missing Node shows a critical alert with the install URL.
+- **Node 24+** on PATH. The launcher auto-discovers Homebrew, nvm, volta, fnm, and asdf installs; missing Node shows a critical alert with the install URL. Node 24 is a hard requirement: `better-sqlite3` (the API's SQLite driver) ships native bindings that fail to load on older Node majors, so the app will refuse to open its database on Node 20 / 22.
 - Whichever coding-agent CLIs the workflow invokes (`claude`, `gemini`, `codex`) plus `gh` and `git`, on PATH from a directory the launcher already prepends: the Node bin dir, `/opt/homebrew/bin`, `/usr/local/bin`, `~/.volta/bin`, `~/.local/bin`, or `~/.cargo/bin`.
 
 ## GitHub Packages auth
