@@ -36,16 +36,22 @@ The app is signed with a Developer ID Application certificate and notarized by A
 - **Node 24+** on PATH. The launcher auto-discovers Homebrew, nvm, volta, fnm, and asdf installs; missing Node shows a critical alert with the install URL. Node 24 is a hard requirement: `better-sqlite3` (the API's SQLite driver) ships native bindings that fail to load on older Node majors, so the app will refuse to open its database on Node 20 / 22.
 - Whichever coding-agent CLIs the workflow invokes (`claude`, `gemini`, `codex`) plus `gh` and `git`, on PATH from a directory the launcher already prepends: the Node bin dir, `/opt/homebrew/bin`, `/usr/local/bin`, `~/.volta/bin`, `~/.local/bin`, or `~/.cargo/bin`.
 
-## GitHub Packages auth
+## GitHub Packages auth (developers only)
 
-The orchestration SDK (`@tone4hook/headless-coding-agent-sdk`) is published to GitHub Packages, which requires authentication even for public reads. Copy `.npmrc.example` to `.npmrc` (or merge the lines into your user-global `~/.npmrc`), then export a token with `read:packages` scope:
+Agent*Dock depends on `@tone4hook/headless-coding-agent-sdk`, hosted on GitHub Packages. **End users installing the DMG do not need this** — the package is bundled into the `.app`.
 
-```bash
-export NODE_AUTH_TOKEN=ghp_your_token_here
-npm install
-```
+To install from source you need a **GitHub classic Personal Access Token** (not a fine-grained token — fine-grained tokens cannot read GitHub Packages npm registries on user-owned packages):
 
-Don't commit `.npmrc` with a real token — the file in the repo uses `${NODE_AUTH_TOKEN}` so the env var is the secret.
+1. https://github.com/settings/tokens/new → check **`read:packages`** only.
+2. Export the token (add to `~/.zshrc` to persist):
+
+   ```bash
+   export NODE_AUTH_TOKEN=ghp_your_token_here
+   ```
+
+3. Run `npm install`. The committed `.npmrc` handles the rest.
+
+If you see `401 Unauthorized` from `npm.pkg.github.com`, your token is fine-grained — regenerate as a classic token.
 
 ## Scripts
 
